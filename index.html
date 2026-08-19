@@ -8,63 +8,27 @@
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <strong>Lu Herramientas</strong>
-      <span>Mate-IB · Panel docente</span>
-    </div>
+    <div><strong>Lu Herramientas</strong><span>Mate-IB · Panel docente</span></div>
     <div id="auth-status">No autenticado</div>
   </header>
-
   <main class="container">
     <section id="login-panel" class="card">
-      <h1>Panel docente</h1>
-      <p>Funciones exponenciales · AI NM</p>
-      <button id="login-google" class="primary">Iniciar sesión con Google</button>
+      <h1>Panel docente</h1><p>Funciones exponenciales · AI NM</p>
+      <form id="email-login" class="login-form">
+        <label>Correo electrónico<input id="email" type="email" autocomplete="username" required></label>
+        <label>Contraseña<input id="password" type="password" autocomplete="current-password" required></label>
+        <button class="primary" type="submit">Iniciar sesión</button>
+      </form>
+      <div class="login-divider">o</div>
+      <button id="login-google" class="secondary" type="button">Iniciar sesión con Google</button>
       <p id="login-message" class="muted"></p>
     </section>
-
     <section id="dashboard" hidden>
-      <div class="toolbar card">
-        <div>
-          <h1>Resultados</h1>
-          <p>Curso 2026 · Bachillerato Internacional · AI NM</p>
-        </div>
-        <label>Sección
-          <select id="section-select">
-            <option value="11-A">11-A</option>
-            <option value="11-B">11-B</option>
-            <option value="invitados">Invitados</option>
-          </select>
-        </label>
-        <button id="logout" class="secondary">Cerrar sesión</button>
-      </div>
-
-      <section class="card">
-        <h2>Estudiantes</h2>
-        <div id="students-loading" class="muted">Cargando…</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Estudiante</th><th>Progreso</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th></tr></thead>
-            <tbody id="students-body"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="student-detail" class="card" hidden>
-        <div class="detail-head">
-          <div><h2 id="student-name">Estudiante</h2><p id="student-meta" class="muted"></p></div>
-          <button id="close-detail" class="secondary">Volver a estudiantes</button>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Pregunta</th><th>Parte</th><th>Respuesta</th><th>Correcta</th><th>Intentos</th><th>Pistas</th><th>Puntuación</th><th>Tiempo</th></tr></thead>
-            <tbody id="attempts-body"></tbody>
-          </table>
-        </div>
-      </section>
+      <div class="toolbar card"><div><h1>Resultados</h1><p>Curso 2026 · Bachillerato Internacional · AI NM</p></div><label>Sección<select id="section-select"><option value="11-A">11-A</option><option value="11-B">11-B</option><option value="invitados">Invitados</option></select></label><button id="logout" class="secondary">Cerrar sesión</button></div>
+      <section class="card"><h2>Estudiantes</h2><div id="students-loading" class="muted">Cargando…</div><div class="table-wrap"><table><thead><tr><th>Estudiante</th><th>Progreso</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th></tr></thead><tbody id="students-body"></tbody></table></div></section>
+      <section id="student-detail" class="card" hidden><div class="detail-head"><div><h2 id="student-name">Estudiante</h2><p id="student-meta" class="muted"></p></div><button id="close-detail" class="secondary">Volver a estudiantes</button></div><div class="table-wrap"><table><thead><tr><th>Pregunta</th><th>Parte</th><th>Respuesta</th><th>Correcta</th><th>Intentos</th><th>Pistas</th><th>Puntuación</th><th>Tiempo</th></tr></thead><tbody id="attempts-body"></tbody></table></div></section>
     </section>
   </main>
-
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
